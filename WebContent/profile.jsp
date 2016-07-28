@@ -4,15 +4,14 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>LoginPage</title>
+<title>Profile</title>
 </head>
 <body>
-<form  action="LoginPage" method="post">
-
-Enter username :<input type="text" name="username"> <br>
-Enter password :<input type="password" name="password"><br>
-<input type="submit" value="Login">
-
+<h1>hello</h1>
+<h1><%out.println(this.getServletContext().getAttribute("username")); %></h1>
+<%HttpSession se=request.getSession(false); %>
+ session ID: <%out.println(request.getSession().getId()); %>
+session name: <%out.println(se); %>
 
 </body>
 </html>
