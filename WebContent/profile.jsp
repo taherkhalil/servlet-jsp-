@@ -10,8 +10,15 @@
 <h1>hello</h1>
 <h1><%out.println(this.getServletContext().getAttribute("username")); %></h1>
 <%HttpSession se=request.getSession(false); %>
+<%String username=(String)getServletContext().getAttribute("username"); %>
+<%session.setAttribute("User", username);%>
  session ID: <%out.println(request.getSession().getId()); %>
 session name: <%out.println(se); %>
-
+<form action="login.jsp">
+<button type="button">Log out!</button>
+<%session.removeAttribute("User"); %>
+<% session.invalidate();%>
+<%-- <%response.sendRedirect("login.jsp"); %> --%>
+</form>
 </body>
 </html>

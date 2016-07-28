@@ -19,6 +19,7 @@
 	<filter-mapping>
 		<filter-name>AuthenticationFilter</filter-name>
 		<url-pattern>/LoginPage</url-pattern>
+		
 	</filter-mapping> 
 	<session-config>
 		<session-timeout>1</session-timeout>
