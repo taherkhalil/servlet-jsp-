@@ -14,7 +14,7 @@
 	<div class="container">
 <h1>Welcome</h1>
 <form  action="LoginPage" method="post">
- Enter userName :<input type="text" name="username"  > <br>
+ Enter userName :<input type="email" name="username"  > <br>
 Enter password :<input type="password" name="password" ><br>
 <input type="submit" value="Login">
 

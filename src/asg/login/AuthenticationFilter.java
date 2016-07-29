@@ -1,4 +1,4 @@
-package ass.login;
+package asg.login;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -12,8 +12,10 @@ import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebFilter;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpServletResponseWrapper;
+import javax.servlet.http.HttpSession;
 
 /**
  * Servlet Filter implementation class AuthenticationFilter
@@ -54,19 +56,24 @@ public class AuthenticationFilter implements Filter {
 		database.put("taha", "123");
 		database.put("aamir", "123");
 		database.put("abida", "1234");
+		database.put("taher@gmail.com", "1234");
+		
 		// TODO Auto-generated method stub
 		// place your code here
 		PrintWriter out = response.getWriter();
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
-		
+		HttpServletRequest request2 = (HttpServletRequest) request;
 		System.out.println("filter called");
 		if (password.equals(database.get(username))) {
 			HttpServletResponse httpResponse = (HttpServletResponse) response;
-			
+			//if does not exist create new session
+			HttpSession session = request2.getSession(true);
 			System.out.println("logged in");
-
+			session.setMaxInactiveInterval(10);
+			session.setAttribute("session",session.getId());
 			httpResponse.sendRedirect("/Profile/profile.jsp");
+			//HttpSession se= request.getSession(true); 
 			chain.doFilter(request, response);
 
 		} else {

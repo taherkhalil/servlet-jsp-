@@ -6,22 +6,29 @@
 	<display-name>Profile</display-name>
 	<servlet>
 		<servlet-name>LoginPage</servlet-name>
-		<servlet-class>ass.login.LoginPage</servlet-class>
+		<servlet-class>asg.login.LoginPage</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>LoginPage</servlet-name>
 		<url-pattern>/LoginPage</url-pattern>
-	</servlet-mapping> 
+	</servlet-mapping>
 	<filter>
 		<filter-name>AuthenticationFilter</filter-name>
-		<filter-class>ass.login.AuthenticationFilter</filter-class>
+		<filter-class>asg.login.AuthenticationFilter</filter-class>
 	</filter>
 	<filter-mapping>
 		<filter-name>AuthenticationFilter</filter-name>
 		<url-pattern>/LoginPage</url-pattern>
-		
-	</filter-mapping> 
+	</filter-mapping>
 	<session-config>
 		<session-timeout>1</session-timeout>
-	</session-config>  
+	</session-config>
+	<filter>
+		<filter-name>formInputFilter</filter-name>
+		<filter-class>asg.login.FormInputFilter</filter-class>		
+	</filter>
+	<!-- <filter-mapping>
+		<filter-name>FormInputFilter</filter-name>
+		<url-pattern>/display.jsp</url-pattern>
+	</filter-mapping> -->
 </web-app>
