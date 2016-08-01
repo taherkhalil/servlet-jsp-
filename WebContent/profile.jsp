@@ -15,6 +15,7 @@
 
 
 <body>
+
 	<abc:GetForm />
 	<a href="EducationalProfile.jsp">Click to Your Profile Information</a>
 
@@ -22,7 +23,7 @@
 		<c:out value="Hello"></c:out>
 
 	</h1>
-	<% this.getServletContext().getAttribute("username"); %>
+	<% out.print(this.getServletContext().getAttribute("username")); %>
 
 	<form action="Logout" method="post">
 		<input type="submit" value="logout">
