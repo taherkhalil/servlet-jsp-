@@ -8,11 +8,37 @@
 <title>display</title>
 </head>
 <body>
-Email:<%out.print(request.getParameter("email")); %><br/>
-Address:<%out.print(request.getParameter("addr")); %><br/>
-Mobile Number:<%out.print(request.getParameter("no")); %><br/>
-<f:view>
+	<jsp:useBean id="residential" class="asg.login.Residential"
+		scope="application">
+	</jsp:useBean>
+<jsp:setProperty property="*" name="residential" />
+	<jsp:useBean id="education" class="asg.login.Education"
+		scope="application">
+	</jsp:useBean>
+	
+	Educational information:<br>
+	
+	<jsp:getProperty property="college" name="education"/><br>
+	<jsp:getProperty property="degree" name="education"/><br>
+	<jsp:getProperty property="percentage" name="education"/><br>
+		<jsp:useBean id="occupation" class="asg.login.Occupation"
+		scope="application">
+	</jsp:useBean>
+	
+	
+	Occupational information:<br>
+	<jsp:getProperty property="company" name="occupation"/><<br>
+	<jsp:getProperty property="designation" name="occupation"/><br>
+	<jsp:getProperty property="salary" name="occupation"/><br>
+		<%-- <jsp:useBean id="residential" class="asg.login.Residential"
+		scope="application">
+	</jsp:useBean> --%>
 
-</f:view>
+	Residential information:
+	<jsp:getProperty property="addr" name="residential"/><br>
+	<jsp:getProperty property="email" name="residential"/><br>
+	<jsp:getProperty property="number" name="residential"/><br>
+	<jsp:getProperty property="pin" name="residential"/><br>
+
 </body>
 </html>

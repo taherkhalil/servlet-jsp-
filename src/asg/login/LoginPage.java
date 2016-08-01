@@ -33,29 +33,9 @@ public class LoginPage extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		// request.getRequestDispatcher("/profile.jsp").forward(request,
-		// response);
+	
 		System.out.println("Login Page Called");
 		
-
-		// PrintWriter out = response.getWriter();
-		// String username = request.getParameter("username");
-		// String password = request.getParameter("password");
-		// String mappass = (String) lp.database.get(username);
-		// System.out.println("filter called");
-		// if (lp.database.containsKey(username)&& mappass.equals(password)) {
-		// HttpServletResponse httpResponse = (HttpServletResponse) response;
-		// out.print("condition satisfied");
-		// System.out.println("condition satisfied");
-		//
-		// httpResponse.sendRedirect("/form/profile.jsp");
-		// }
-		// else {
-		// out.println("invalid username or password");
-		// HttpServletResponse httpResponse = (HttpServletResponse) response;
-		// System.out.println("Filter redirect to login.jsp");
-		// httpResponse.sendRedirect("login.jsp");
-		// }
 
 	}
 
@@ -73,14 +53,6 @@ public class LoginPage extends HttpServlet {
 		
 		System.out.println(request.getSession(false).getId());
 		
-//		if(se.isNew())
-//		{
-//			se.setAttribute("username", username);
-//		}
-//		else{
-//			se.getAttribute(username);
-//			request.getSession(false);
-//		}
 		this.getServletContext().setAttribute("username", username);
 	}
 
