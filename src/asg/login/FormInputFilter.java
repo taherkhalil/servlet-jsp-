@@ -1,6 +1,8 @@
 package asg.login;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
 import javax.servlet.FilterConfig;
@@ -13,18 +15,16 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet Filter implementation class FormInputFilter
  */
-//@WebFilter("/FormInputFilter")
+// @WebFilter("/FormInputFilter")
 public class FormInputFilter implements Filter {
 
-
 	/**
-     * Default constructor. 
-     */
-	
-	
-    public FormInputFilter() {
-        // TODO Auto-generated constructor stub
-    }
+	 * Default constructor.
+	 */
+
+	public FormInputFilter() {
+		// TODO Auto-generated constructor stub
+	}
 
 	/**
 	 * @see Filter#destroy()
@@ -36,30 +36,27 @@ public class FormInputFilter implements Filter {
 	/**
 	 * @see Filter#doFilter(ServletRequest, ServletResponse, FilterChain)
 	 */
-	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
+	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
+			throws IOException, ServletException {
 		// TODO Auto-generated method stub
 		// place your code here
-
-		HttpServletResponse res = (HttpServletResponse) response;		
-		String email=(String) request.getParameter("email");
-		String address=(String) request.getParameter("addr");
-		String number=(String) request.getParameter("no");
-		if(email.isEmpty()&& address.isEmpty() && number.isEmpty())
-		{
+		PrintWriter pw = new PrintWriter(System.out, true);
+		HttpServletResponse res = (HttpServletResponse) response;
+		String email = (String) request.getParameter("email");
+		String address = (String) request.getParameter("addr");
+		String number = (String) request.getParameter("no");
+		System.out.println(email);
+		System.out.println(address);
+		System.out.println(number);
+		//pw.println("alert \'you have got"+number+" messages\'");
+		if (email.isEmpty() || address.isEmpty() || number.isEmpty()) {
 			System.out.println("please fill the values ");
-			request.getRequestDispatcher("Profile/profile.jsp").forward(request, response);
-		}
-		
-		if(email.matches("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
-				+ "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$"
+			request.setAttribute("errorMessage", "Please submit an amount of at least 1");
 			
-));
-		{
-			//&& number.matches("(\d{7})|(\d{10)| ...")
-			System.out.println("please fill the values ");
-			request.getRequestDispatcher("Profile/profile.jsp").forward(request, response);
+			
+			res.sendRedirect("/Profile/profile.jsp");
 		}
-		
+
 		chain.doFilter(request, response);
 	}
 

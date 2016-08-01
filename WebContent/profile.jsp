@@ -1,5 +1,8 @@
 <%@page import="org.apache.catalina.Session"%>
 <%-- <%@page import="javax.websocket.Session"%> --%>
+<%-- <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %> --%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -23,9 +26,11 @@
 
 
 <form  action="display.jsp" method="post">
- Enter email :<input type="email" name="email"  > <br>
+ 
+ Enter email :<input type="email" name="email" > <br>
 Enter address :<input type="text" name="addr" ><br>
-Enter Phone number :<input type="text" name="no" ><br>
+Enter Phone number :<input  type="text" onkeypress='return event.charCode >= 48 && event.charCode <= 57'  name ="no"><br>
+<div style="color: #FF0000;">${errorMessage}</div>
 <input type="submit" value="submit">
 </form>
 <%request.getSession(false); %>

@@ -70,7 +70,7 @@ public class AuthenticationFilter implements Filter {
 			//if does not exist create new session
 			HttpSession session = request2.getSession(true);
 			System.out.println("logged in");
-			session.setMaxInactiveInterval(10);
+			session.setMaxInactiveInterval(100);
 			session.setAttribute("session",session.getId());
 			httpResponse.sendRedirect("/Profile/profile.jsp");
 			//HttpSession se= request.getSession(true); 

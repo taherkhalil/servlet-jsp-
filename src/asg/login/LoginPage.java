@@ -11,9 +11,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-/**
- * Servlet implementation class LoginPage
- */
+
+ 
 // @WebServlet("/LoginPage")
 public class LoginPage extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -37,6 +36,7 @@ public class LoginPage extends HttpServlet {
 		// request.getRequestDispatcher("/profile.jsp").forward(request,
 		// response);
 		System.out.println("Login Page Called");
+		
 
 		// PrintWriter out = response.getWriter();
 		// String username = request.getParameter("username");
