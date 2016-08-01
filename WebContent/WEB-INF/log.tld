@@ -6,12 +6,12 @@
 <!-- a tag library descriptor -->
 
 <taglib>
-  <tlib-version>1.0</tlib-version>
-  <jsp-version>2.0</jsp-version>
-  <short-name>Example TLD</short-name>
-  <tag>
-    <name>GetForm</name>
-    <tag-class>asg.login.Forms</tag-class>
-    <body-content>empty</body-content>
-  </tag>
+	<tlib-version>1.0</tlib-version>
+	<jsp-version>2.0</jsp-version>
+	<short-name>Example TLD</short-name>
+	<tag>
+		<name>GetForm</name>
+		<tag-class>asg.login.Forms</tag-class>
+		<body-content>empty</body-content>
+	</tag>
 </taglib>

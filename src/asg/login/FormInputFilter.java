@@ -45,27 +45,21 @@ public class FormInputFilter implements Filter {
 		String college = (String) request.getParameter("college");
 		String degree = (String) request.getParameter("degree");
 		String percentage = (String) request.getParameter("percentage");
-	
+
 		String email = (String) request.getParameter("email");
 		String address = (String) request.getParameter("addr");
 		String number = (String) request.getParameter("number");
-		System.out.println(email);
-		System.out.println(address);
-		System.out.println(number);
-		//pw.println("alert \'you have got"+number+" messages\'");
+
 		if (college.isEmpty() || degree.isEmpty() || percentage.isEmpty()) {
 			System.out.println("please fill the values ");
-			
-			
-			PrintWriter out=res.getWriter();
+
+			PrintWriter out = res.getWriter();
 			out.print("please enter values");
-			
+
 			request.getRequestDispatcher("EducationalProfile.jsp").include(request, res);
 		}
 		chain.doFilter(request, response);
-	
 
-		
 	}
 
 	/**

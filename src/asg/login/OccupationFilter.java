@@ -18,12 +18,12 @@ import javax.servlet.http.HttpServletResponse;
 @WebFilter("/OccupationFilter")
 public class OccupationFilter implements Filter {
 
-    /**
-     * Default constructor. 
-     */
-    public OccupationFilter() {
-        // TODO Auto-generated constructor stub
-    }
+	/**
+	 * Default constructor.
+	 */
+	public OccupationFilter() {
+		// TODO Auto-generated constructor stub
+	}
 
 	/**
 	 * @see Filter#destroy()
@@ -35,22 +35,22 @@ public class OccupationFilter implements Filter {
 	/**
 	 * @see Filter#doFilter(ServletRequest, ServletResponse, FilterChain)
 	 */
-	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
-		
+	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
+			throws IOException, ServletException {
+
 		HttpServletResponse res = (HttpServletResponse) response;
 		String company = (String) request.getParameter("company");
-	
-		 String designation = (String) request.getParameter("designation");
-		
-		 String salary = (String) request.getParameter("salary");
-		if(company.isEmpty()|| designation.isEmpty()|| salary.isEmpty())
-			{
-				PrintWriter out=res.getWriter();
-				out.print("PLEASE ENTER ALL VALUES");
-				
-				request.getRequestDispatcher("OccupationProfile.jsp").include(request, res);
-			}
-			
+
+		String designation = (String) request.getParameter("designation");
+
+		String salary = (String) request.getParameter("salary");
+		if (company.isEmpty() || designation.isEmpty() || salary.isEmpty()) {
+			PrintWriter out = res.getWriter();
+			out.print("PLEASE ENTER ALL VALUES");
+
+			request.getRequestDispatcher("OccupationProfile.jsp").include(request, res);
+		}
+
 		chain.doFilter(request, response);
 	}
 

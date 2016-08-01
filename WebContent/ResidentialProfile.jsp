@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -7,13 +7,14 @@
 <title>Insert title here</title>
 </head>
 <body>
-<jsp:useBean id="occupation" class="asg.login.Occupation"
+	<jsp:useBean id="occupation" class="asg.login.Occupation"
 		scope="application">
 	</jsp:useBean>
-	
-<jsp:setProperty  property="*"  name="occupation" />
-<form action="display.jsp">
-<table>
+
+	<jsp:setProperty property="*" name="occupation" />
+	<h1>Occupational information here</h1>
+	<form action="display.jsp">
+		<table>
 			<td>
 			<tr>
 				Enter Current Addresss :
@@ -32,7 +33,7 @@
 					name="number">
 			</tr>
 			<br>
-				<tr>
+			<tr>
 				Enter Pincode :
 				<input type="text"
 					onkeypress='return event.charCode >= 48 && event.charCode <= 57'

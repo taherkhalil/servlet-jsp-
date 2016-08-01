@@ -7,11 +7,12 @@
 <title>Insert title here</title>
 </head>
 <body>
-<jsp:useBean id="education" class="asg.login.Education"
+	<jsp:useBean id="education" class="asg.login.Education"
 		scope="application">
 	</jsp:useBean>
-	
-<jsp:setProperty  property= "*"  name="education" />
+
+	<jsp:setProperty property="*" name="education" />
+	<h1>Occupational information here</h1>
 	<form action="ResidentialProfile.jsp">
 		<table>
 			<td>

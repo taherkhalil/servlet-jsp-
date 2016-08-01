@@ -16,11 +16,11 @@
 
 <body>
 	<abc:GetForm />
-		<a href="EducationalProfile.jsp">Click to Your Profile Information</a>
+	<a href="EducationalProfile.jsp">Click to Your Profile Information</a>
 
 	<h1>
-	<c:out value="Hello"></c:out>
-	
+		<c:out value="Hello"></c:out>
+
 	</h1>
 	<% this.getServletContext().getAttribute("username"); %>
 

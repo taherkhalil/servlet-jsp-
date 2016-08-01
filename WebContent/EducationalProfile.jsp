@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+<h1>Educational information here</h1>
 <form action="OccupationProfile.jsp" >
 		<table>
 			<td>

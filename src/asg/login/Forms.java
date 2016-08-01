@@ -12,26 +12,22 @@ import javax.servlet.jsp.JspWriter;
 import javax.servlet.jsp.PageContext;
 import javax.servlet.jsp.tagext.SimpleTagSupport;
 
-
-public class Forms  extends SimpleTagSupport{
+public class Forms extends SimpleTagSupport {
 	StringWriter sw = new StringWriter();
-	
+
 	@Override
-	public void doTag() throws JspException,IOException
-	{
-		PageContext pageContext = (PageContext) getJspContext();  
-		HttpServletRequest request = (HttpServletRequest) pageContext.getRequest();  
-		HttpServletResponse response = (HttpServletResponse) pageContext.getResponse(); 
+	public void doTag() throws JspException, IOException {
+		PageContext pageContext = (PageContext) getJspContext();
+		HttpServletRequest request = (HttpServletRequest) pageContext.getRequest();
+		HttpServletResponse response = (HttpServletResponse) pageContext.getResponse();
 		HttpSession session = (HttpSession) pageContext.getSession();
 		if (request.getSession().getId() != session.getAttribute("session")) {
 			response.sendRedirect("login.jsp");
 		}
-		
-		System.out.println("tagsupport chala");;
-		
-		
+
+		System.out.println("tagsupport chala");
+		;
+
 	}
-	
-	
 
 }

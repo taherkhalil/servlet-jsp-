@@ -11,8 +11,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-
- 
 // @WebServlet("/LoginPage")
 public class LoginPage extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -33,9 +31,7 @@ public class LoginPage extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-	
 		System.out.println("Login Page Called");
-		
 
 	}
 
@@ -45,14 +41,14 @@ public class LoginPage extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-//		HttpSession se= request.getSession(true);
-//		se.setMaxInactiveInterval(1);
+		// HttpSession se= request.getSession(true);
+		// se.setMaxInactiveInterval(1);
 		System.out.println("inside login page");
 		System.out.println(request.getParameter("username"));
 		String username = request.getParameter("username");
-		
+
 		System.out.println(request.getSession(false).getId());
-		
+
 		this.getServletContext().setAttribute("username", username);
 	}
 
