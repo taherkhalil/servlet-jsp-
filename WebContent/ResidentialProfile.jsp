@@ -13,8 +13,8 @@
 
 	<jsp:setProperty property="*" name="occupation" />
 	<h1>Occupational information here</h1>
-	<form action="display.jsp">
-		<table>
+	<form action="show" method="post">
+		<table> 
 			<td>
 			<tr>
 				Enter Current Addresss :
@@ -41,7 +41,7 @@
 			</tr>
 			<br>
 			<tr>
-				<input type="submit" value="submit" onclick="diplay.jsp">
+				<input type="submit" value="submit" >
 			</tr>
 			</td>
 		</table>

@@ -49,14 +49,19 @@ public class FormInputFilter implements Filter {
 		String email = (String) request.getParameter("email");
 		String address = (String) request.getParameter("addr");
 		String number = (String) request.getParameter("number");
+		PrintWriter out = res.getWriter();
 
 		if (college.isEmpty() || degree.isEmpty() || percentage.isEmpty() || !college.matches("^[a-zA-Z\\s]*$") || !degree.matches("^[a-zA-Z\\s]*$") || percentage.length()>2) {
 			System.out.println("please fill the values and currect values and only 2 digits for % ");
 
-			PrintWriter out = res.getWriter();
+		
 			out.print("please enter values");
 
 			request.getRequestDispatcher("EducationalProfile.jsp").include(request, res);
+			if(!college.matches("^[a-zA-Z\\s]*$") || !degree.matches("^[a-zA-Z\\s]*$") || percentage.length()>2){
+				out.print("only alphabets for college/degree,2 digits for %");
+				request.getRequestDispatcher("EducationalProfile.jsp").include(request, res);
+			}
 		}
 		chain.doFilter(request, response);
 

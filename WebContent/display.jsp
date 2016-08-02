@@ -10,7 +10,8 @@
 <title>display</title>
 </head>
 <body>
-<abc:GetForm />
+
+	<abc:GetForm />
 	<jsp:useBean id="residential" class="asg.login.Residential"
 		scope="application">
 	</jsp:useBean>

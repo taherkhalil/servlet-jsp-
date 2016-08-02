@@ -4,8 +4,8 @@
 
 <html>
 <head>
-<link rel="stylesheet" href="css/style.css">
-
+<!-- <link rel="stylesheet" href="css/style.css"> 
+ -->
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>LoginPage</title>
 </head>
@@ -17,7 +17,7 @@
 				Enter userName :<input type="email" name="username"> <br>
 				Enter password :<input type="password" name="password"><br>
 				<input type="submit" value="Login">
-
 			</form>
+			
 </body>
 </html>
