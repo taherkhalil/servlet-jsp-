@@ -44,9 +44,9 @@ public class OccupationFilter implements Filter {
 		String designation = (String) request.getParameter("designation");
 
 		String salary = (String) request.getParameter("salary");
-		if (company.isEmpty() || designation.isEmpty() || salary.isEmpty()) {
+		if (company.isEmpty() || designation.isEmpty() || salary.isEmpty()||company.isEmpty() || !designation.matches("^[a-zA-Z\\s]*$")) {
 			PrintWriter out = res.getWriter();
-			out.print("PLEASE ENTER ALL VALUES");
+			out.print("PLEASE ENTER ALL VALUES and correct values");
 
 			request.getRequestDispatcher("OccupationProfile.jsp").include(request, res);
 		}

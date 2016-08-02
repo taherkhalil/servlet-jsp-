@@ -50,8 +50,8 @@ public class FormInputFilter implements Filter {
 		String address = (String) request.getParameter("addr");
 		String number = (String) request.getParameter("number");
 
-		if (college.isEmpty() || degree.isEmpty() || percentage.isEmpty()) {
-			System.out.println("please fill the values ");
+		if (college.isEmpty() || degree.isEmpty() || percentage.isEmpty() || !college.matches("^[a-zA-Z\\s]*$") || !degree.matches("^[a-zA-Z\\s]*$") || percentage.length()>2) {
+			System.out.println("please fill the values and currect values and only 2 digits for % ");
 
 			PrintWriter out = res.getWriter();
 			out.print("please enter values");

@@ -20,10 +20,12 @@
 	<a href="EducationalProfile.jsp">Click to Your Profile Information</a>
 
 	<h1>
-		<c:out value="Hello"></c:out>
+		<c:out value="Hello"></c:out>\
+	
 
 	</h1>
-	<% out.print(this.getServletContext().getAttribute("username")); %>
+	<c:out value="${username}"></c:out>
+	
 
 	<form action="Logout" method="post">
 		<input type="submit" value="logout">
