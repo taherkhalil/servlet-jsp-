@@ -58,7 +58,7 @@
 	</filter>
 	<filter-mapping>
 		<filter-name>FormInputFilter</filter-name>
-		<url-pattern>/OccupationProfile.jsp</url-pattern>
+		<url-pattern>/occProfile</url-pattern>
 	</filter-mapping>
 	<servlet>
 		<servlet-name>OccupationProfile</servlet-name>

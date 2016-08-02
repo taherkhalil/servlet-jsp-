@@ -10,7 +10,7 @@
 <body>
 <abc:GetForm />
 	<jsp:useBean id="education" class="asg.login.Education"
-		scope="application">
+		scope="session">
 	</jsp:useBean>
 
 	<jsp:setProperty property="*" name="education" />
